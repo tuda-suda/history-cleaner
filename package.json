@@ -1,0 +1,28 @@
+{
+  "name": "history-cleaner",
+  "version": "1.0.0",
+  "description": "Automatically remove pages that match given keywords from browser history",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tuda-suda/history-cleaner.git"
+  },
+  "keywords": [
+    "firefox",
+    "browser",
+    "extension",
+    "history"
+  ],
+  "author": "Marat Gumerov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tuda-suda/history-cleaner/issues"
+  },
+  "homepage": "https://github.com/tuda-suda/history-cleaner#readme",
+  "dependencies": {
+    "web-ext": "^4.3.0"
+  }
+}
