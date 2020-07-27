@@ -43,7 +43,7 @@ function clearAll() {
     browser.history
         .search({
             text: "", 
-            maxResults: 10000
+            maxResults: 0
         }).then(history => {
             history.forEach(item => {
                 deleteURL(item);
