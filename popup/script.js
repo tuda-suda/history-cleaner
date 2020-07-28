@@ -3,7 +3,7 @@
 */
 
 function onError(error) {
-    console.log(error)
+    console.log(error);
 }
 
 function isEmpty(str) {
@@ -13,15 +13,15 @@ function isEmpty(str) {
 function storeKeywords() {
     browser.storage.local.get('keywords')
         .then(existing_kw => {
-            const old_kw = existing_kw.keywords || []
+            const old_kw = existing_kw.keywords || [];
 
-            const keywords_input = document.getElementById('keywords')
+            const keywords_input = document.getElementById('keywords');
             var keywords_list = keywords_input.value.split(' ');
 
             if (isEmpty(keywords_list[0])) { 
-                keywords_list = old_kw
+                keywords_list = old_kw;
             } else {
-                keywords_list = [...new Set([...old_kw, ...keywords_list])]
+                keywords_list = [...new Set([...old_kw, ...keywords_list])];
             }
 
             if (keywords_list.length > 0 && !isEmpty(keywords_list[0])) {
@@ -44,27 +44,31 @@ function deleteKeyword(kw) {
             const keywords = item.keywords;
             keywords.forEach((el, index) => {
                 if (el === kw) {
-                    keywords.splice(index, 1)
+                    keywords.splice(index, 1);
                 }
             })
+            renderLI(keywords);
             browser.storage.local
-                .set({keywords: keywords})
-        }).catch(onError)
+                .set({keywords: keywords});
+        }).catch(onError);
 }
 
 function renderLI(elements) {
     const list = document.getElementById('list');
-    list.innerText = ''
+    list.innerText = '';
 
-    elements.forEach(element => {
+    elements.forEach(el => {
         const li = document.createElement('li');
         const delete_btn = document.createElement('div');
 
         delete_btn.innerText = '×';
-        delete_btn.addEventListener('click', deleteKeyword(element));
+        delete_btn.addEventListener('click', () => {
+            deleteKeyword(el);
+        });
         delete_btn.className = 'del-button';
+        delete_btn.setAttribute('title', `Delete keyword ${el}`)
 
-        li.innerText = element;
+        li.innerText = el;
         li.appendChild(delete_btn);
         li.className = 'li-button';
 
@@ -87,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const keywords = item.keywords;
                 const content = document.getElementById('content');
 
-                collapsible.classList.toggle("active")
+                collapsible.classList.toggle("active");
             
                 if (content.style.maxHeight) {
                     document.getElementById('list').innerText = '';
