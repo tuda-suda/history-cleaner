@@ -16,7 +16,7 @@ function storeKeywords() {
             const old_kw = existing_kw.keywords || [];
 
             const keywords_input = document.getElementById('keywords');
-            var keywords_list = keywords_input.value.split(' ');
+            var keywords_list = keywords_input.value.split(/\s+/);
 
             if (isEmpty(keywords_list[0])) { 
                 keywords_list = old_kw;
