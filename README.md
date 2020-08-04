@@ -15,5 +15,5 @@ Click "Show keywords" to list all your keywords. If you wish to delete a specicf
 
 ## Download
 
-The extension can be donwloaded (here)[https://addons.mozilla.org/en-US/firefox/addon/history-pages-cleaner/]
+The extension can be donwloaded [here](https://addons.mozilla.org/en-US/firefox/addon/history-pages-cleaner/)
 
